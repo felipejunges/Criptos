@@ -9,11 +9,11 @@ namespace Criptos
         {
             string senha = "1111";
 
-            CryptLib bCript = new BCryptLib();
-            CryptLib sCript = new SCryptLib();
+            CryptLib bCrypt = new BCryptLib();
+            CryptLib sCrypt = new SCryptLib();
 
-            string senhaBCrypt = bCript.CreateHash(senha);
-            string senhaSCrypt = sCript.CreateHash(senha);
+            string senhaBCrypt = bCrypt.CreateHash(senha);
+            string senhaSCrypt = sCrypt.CreateHash(senha);
 
             Console.WriteLine();
             Console.WriteLine("Senha:        " + senha);
@@ -23,8 +23,8 @@ namespace Criptos
             Console.WriteLine("Senha SCrypt: " + senhaSCrypt);
             
             Console.WriteLine();
-            Console.WriteLine("Senha válida BCrypt: " + (bCript.Check(senha, senhaBCrypt) ? "Sim" : "Não"));
-            Console.WriteLine("Senha válida SCrypt: " + (sCript.Check(senha, senhaSCrypt) ? "Sim" : "Não"));
+            Console.WriteLine("Senha válida BCrypt: " + (bCrypt.Check(senha, senhaBCrypt) ? "Sim" : "Não"));
+            Console.WriteLine("Senha válida SCrypt: " + (sCrypt.Check(senha, senhaSCrypt) ? "Sim" : "Não"));
         }
     }
 }
